@@ -1,0 +1,46 @@
+<div style="padding: 20px; font-family: sans-serif;">
+  <h2>Minhas Contas</h2>
+  
+  <button (click)="novaConta()" style="margin-bottom: 15px; padding: 10px; background: #28a745; color: white; border: none; cursor: pointer; border-radius: 4px;">
+    + Nova Conta
+  </button>
+
+  <table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th style="padding: 10px;">ID</th>
+        <th style="padding: 10px;">Titular</th>
+        <th style="padding: 10px;">Saldo (R$)</th>
+        <th style="padding: 10px; text-align: center;">Ações</th>
+      </tr>
+    </thead>
+    
+    <!-- Renderização condicional garantida pelo CommonModule -->
+    <tbody *ngIf="contas.length > 0">
+      <tr *ngFor="let conta of contas">
+        <td style="padding: 10px;">{{ conta.id }}</td>
+        <td style="padding: 10px;">{{ conta.titular }}</td>
+        <td style="padding: 10px;">{{ conta.saldo }}</td>
+        <td style="padding: 10px; text-align: center;">
+          <button (click)="editarConta(conta.id)" style="margin-right: 5px; padding: 5px 10px; background: #007bff; color: white; border: none; cursor: pointer; border-radius: 4px;">Editar</button>
+          <button (click)="deletarConta(conta.id)" style="padding: 5px 10px; background: #dc3545; color: white; border: none; cursor: pointer; border-radius: 4px;">Apagar</button>
+        </td>
+      </tr>
+    </tbody>
+    
+    <tbody *ngIf="contas.length === 0">
+      <tr>
+        <td colspan="4" style="padding: 15px; text-align: center; color: gray;">
+          Nenhuma conta cadastrada ainda.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div style="margin-top: 40px; padding: 15px; background-color: #e9ecef; border-radius: 5px;">
+    <h4 style="margin-top: 0; color: #333;">Equipa de Desenvolvimento:</h4>
+    <ul style="margin-bottom: 0; color: #555;">
+      <li>Erick Pereira Pontes - Matrícula: [Insira a sua matrícula]</li>
+    </ul>
+  </div>
+</div>

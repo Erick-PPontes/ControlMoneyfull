@@ -1,0 +1,25 @@
+<div style="padding: 20px; font-family: sans-serif; max-width: 500px;">
+  <h2>{{ isEdicao ? 'Editar Conta' : 'Nova Conta' }}</h2>
+
+  <div style="margin-bottom: 15px;">
+    <label style="display: block; margin-bottom: 5px; font-weight: bold;">Titular da Conta:</label>
+    <input type="text" [(ngModel)]="conta.titular"
+           style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;" />
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <label style="display: block; margin-bottom: 5px; font-weight: bold;">Saldo Inicial (R$):</label>
+    <input type="number" [(ngModel)]="conta.saldo"
+           style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;" />
+  </div>
+
+  <button (click)="salvar()"
+          style="padding: 10px 15px; background: #28a745; color: white; border: none; cursor: pointer; border-radius: 4px; margin-right: 10px;">
+    Salvar
+  </button>
+
+  <button (click)="cancelar()"
+          style="padding: 10px 15px; background: #6c757d; color: white; border: none; cursor: pointer; border-radius: 4px;">
+    Cancelar
+  </button>
+</div>
